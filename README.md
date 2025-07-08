@@ -42,8 +42,8 @@ prompt_exemple_bank/
 │   ├── actors/                             # Agents de production (scribe, analyst, …)
 │   ├── critics/                            # Comité d'évaluation (feasibility, ethics, …)
 │   └── docs/                               # Spécifications, QA, déploiement
-├── example00_MVP_TestAgent.md              # Exemple de stratégie de test de portefeuille
-├── example01_ConseillerBudgetPersonnel.md  # Agent d'analyse budgétaire
+├── example00_MVP_TestAgent.md              # Exemple de stratégie de test de portefeuille dans un Workflow linéaire
+├── example01_ConseillerBudgetPersonnel.md  # Agent d'analyse budgétaire StandAlone
 └── README.md                               # Vous y êtes 😊
 ```
 

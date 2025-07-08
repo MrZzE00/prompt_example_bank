@@ -47,11 +47,21 @@ Chaque agent que nous avons défini (`Scribe`, `Analyst`, `Critic`, etc.) est im
   * `ScribeNode`: Transcrit les inputs utilisateur dans `state.history`.
   * `AnalystNode`: Analyse `state.history` et `state.sprint_decisions` pour produire des `state.proposals_to_evaluate`.
   * `MarketIntelNode`: Utilise un outil de recherche pour enrichir le `state`.
+  * `VisualiserNode`: Produit des visualisations (diagrammes, graphiques) pour aider l'équipe à comprendre les données.
   * `ChroniclerNode`: Compile les `state.sprint_decisions` pour générer le `state.final_report`.
 
 **Comité d'Évaluation (Critics) :**
 
   * `CriticCommitteeNode`: Un nœud qui peut appeler en parallèle plusieurs "sous-logiques" ou "sous-agents" Critics. Chaque Critic (Faisabilité, Désirabilité, Stratégie, etc.) prend une proposition en entrée et produit un objet `critique` qui est ajouté au `state.critiques`.
+
+  * `FeasibilityCritic`: Évalue la faisabilité technique et opérationnelle des propositions.
+  * `DesirabilityCritic`: Analyse l'attrait et la pertinence pour les utilisateurs finaux.
+  * `StrategyCritic`: Vérifie l'alignement stratégique avec les objectifs de l'organisation.
+  * `FinancialCritic`: Estime les impacts financiers et le ROI potentiel.
+  * `MarketingCritic`: Examine la différenciation, le positionnement et les opportunités de marché.
+  * `EthicsCritic`: Valide les implications éthiques et la conformité aux valeurs.
+  * `LegalCritic`: Vérifie la conformité légale et la gestion des risques juridiques.
+  * `OperationsCritic`: Anticipe les contraintes opérationnelles et la mise en œuvre.
 
 ### c. Le Routeur (`Router`) : Le Cerveau de l'Orchestrateur
 
@@ -102,7 +112,7 @@ graph TD;
 
 ```
 /cognitive-sprint-facilitator
-|-- /app
+|-- /app                    # PRD (en cours)
 |   |-- main.py             # Point d'entrée de l'API (FastAPI, Flask)
 |   |-- graph.py            # Définition et compilation du graphe LangGraph
 |-- /agents

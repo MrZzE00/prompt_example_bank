@@ -64,7 +64,7 @@ prompt_exemple_bank/
 ## Exemples Remarquables
 | Fichier | Pourquoi c'est intéressant ? |
 |---------|-----------------------------|
-| `Orchestration/actors/02_marketintel_agent.md` | Montre un prompt avec exigence de citation de sources + schéma JSON strict. |
+| `example01_MVP_TestAgent.md` | Montre un prompt avec exigence de citation de sources + schéma JSON strict. |
 | `Orchestration/critics/04_EthicsCritic_Agent.md` | Évalue les risques éthiques avec niveaux de risque typés. |
 | `Orchestration/docs/05_GUIDE_DEPLOIEMENT_MONITORING.md` | Décrit un pipeline complet Docker → Kubernetes avec migrations DB & probes. |
 

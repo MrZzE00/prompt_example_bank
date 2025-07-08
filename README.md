@@ -38,13 +38,13 @@ La banque d'exemples couvre l'intégralité d'un **workflow d'orchestration mult
 ```
 prompt_exemple_bank/
 ├── Orchestration/
-│   ├── 00_orchestrateur.md      # Agent maître (router)
-│   ├── actors/                  # Agents de production (scribe, analyst, …)
-│   ├── critics/                 # Comité d'évaluation (feasibility, ethics, …)
-│   └── docs/                    # Spécifications, QA, déploiement
-├── MVP_TestAgent.md            # Exemple de stratégie de test de portefeuille
-├── ConseillerBudgetPersonnel.md# Agent d'analyse budgétaire
-└── README.md                   # Vous y êtes 😊
+│   ├── 00_orchestrateur.md                 # Agent maître (router)
+│   ├── actors/                             # Agents de production (scribe, analyst, …)
+│   ├── critics/                            # Comité d'évaluation (feasibility, ethics, …)
+│   └── docs/                               # Spécifications, QA, déploiement
+├── example00_MVP_TestAgent.md              # Exemple de stratégie de test de portefeuille
+├── example01_ConseillerBudgetPersonnel.md  # Agent d'analyse budgétaire
+└── README.md                               # Vous y êtes 😊
 ```
 
 ## Prise en Main Rapide

@@ -29,7 +29,7 @@ La banque d'exemples couvre l'intégralité d'un **workflow d'orchestration mult
 | Catégorie | Description |
 |-----------|-------------|
 | Orchestration | Exemple pas-à-pas d'un graphe LangGraph avec router, actors, critics et state object. |
-| Prompts | +20 fichiers YAML commentés illustrant la rédaction de prompts sûrs et réutilisables. |
+| Prompts | 16 fichiers commentés illustrant la rédaction de prompts sûrs et réutilisables. |
 | Documentation | Spécifications fonctionnelles & techniques (FS, architecture, QA, déploiement). |
 | Sécurité | Directive ABSOLUTE, filtrage de contenus toxiques, stratégie d'évitement des fuites de prompt. |
 | CI/QA | Plan de tests unitaire, intégration, E2E et non-fonctionnels incluant scénarios d'abuse-mode. |

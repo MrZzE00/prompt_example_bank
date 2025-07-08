@@ -6,7 +6,7 @@
 
 ## 2\. Paradigme Architectural : LangGraph
 
-Pour construire ce système, nous utilisons **LangGraph**, une extension de LangChain. Ce choix est délibéré car le workflow d'un atelier n'est pas linéaire.
+Pour construire ce système, nous recommandons d'utiliser **LangGraph**, une extension de LangChain. Ce choix est délibéré car le workflow d'un atelier n'est pas linéaire.
 
   - **Stateful (À état) :** L'état du sprint (décisions, idées, analyses) doit être maintenu et accessible durant toute la session (plusieurs jours).
   - **Cyclique :** Le processus implique des boucles, notamment pour le cycle "Actor-Critic" où une proposition est générée, puis évaluée, puis potentiellement révisée.

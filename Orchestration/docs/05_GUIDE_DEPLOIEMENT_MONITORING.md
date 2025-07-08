@@ -1,17 +1,40 @@
+## Table des Matières
+
+- [01. Vue d'Ensemble](#01-vue-densemble)
+- [02. Prérequis de l'Environnement](#02-prrequis-de-lenvironnement)
+  - [2.1. Stack Technique](#21-stack-technique)
+  - [2.2. Services Externes](#22-services-externes)
+- [03. Configuration de l'Application](#03-configuration-de-lapplication)
+- [04. Procédure de Déploiement](#04-procdure-de-dploiement)
+  - [4.1. Construction de l'Image Docker](#41-construction-de-limage-docker)
+  - [4.2. Migration de Base de Données (obligatoire)](#42-migration-de-base-de-donnes-obligatoire)
+  - [4.3. Déploiement de l'Application](#43-dploiement-de-lapplication)
+  - [4.4. Vérification Post-Déploiement](#44-vrification-post-dploiement)
+- [05. Stratégie de Logging et Monitoring](#05-stratgie-de-logging-et-monitoring)
+  - [5.1. Logging](#51-logging)
+  - [5.2. Monitoring (Tableau de Bord)](#52-monitoring-tableau-de-bord)
+  - [5.3. Alerting](#53-alerting)
+  - [5.4. Observabilité avec LangSmith](#54-observabilit-avec-langsmith)
+
+---
+source_file: 05_GUIDE_DEPLOIEMENT_MONITORING.md
+---
+
+
 # 06. Guide de Déploiement et Monitoring
 
-| ID du Document | CSF-OPS-v1.0 |
-| :--- | :--- |
-| **Titre** | Guide de Déploiement & Monitoring - Cognitive Sprint Facilitator |
-| **Version** | 1.0 |
-| **Date** | 2025-07-08 |
-| **Auteur** | PromptArchitectPrime |
+| ID du Document | CSF-OPS-v1.0                                                     |
+| :---           | :---                                                             |
+| **Titre**      | Guide de Déploiement & Monitoring - Cognitive Sprint Facilitator |
+| **Version**    | 1.0                                                              |
+| **Date**       | 2025-07-08                                                       |
+| **Auteur**     | PromptArchitectPrime                                             |
 
-## 1. Vue d'Ensemble
+## 01. Vue d'Ensemble
 
 Ce document fournit les instructions techniques pour le déploiement, la configuration et la surveillance de l'application "Cognitive Sprint Facilitator". Il s'adresse aux ingénieurs responsables de l'infrastructure et des opérations.
 
-## 2. Prérequis de l'Environnement
+## 02. Prérequis de l'Environnement
 
 ### 2.1. Stack Technique
 
@@ -31,7 +54,7 @@ Un accès réseau sortant est requis pour les services suivants :
 * **API LangSmith :** Pour l'observabilité et le traçage.
 * **API de Recherche Web :** (ex: Google Search API, Tavily API).
 
-## 3. Configuration de l'Application
+## 03. Configuration de l'Application
 
 L'application est configurée via des variables d'environnement. Un fichier `.env.example` doit être présent à la racine du projet.
 
@@ -51,7 +74,7 @@ LOG_LEVEL="INFO" # "DEBUG" pour le développement, "INFO" ou "WARNING" pour la p
 APP_HOST="0.0.0.0"
 APP_PORT="8000"
 
-## 4. Procédure de Déploiement
+## 04. Procédure de Déploiement
 
 ### 4.1. Construction de l'Image Docker
 
@@ -96,7 +119,7 @@ Dans Kubernetes, vous pouvez créer un **Job init-migration** (voir manifest `jo
 2. Attendez que le `Deployment` passe à l'état **Ready** (readinessProbe).
 3. Exécutez un **smoke test** via `/health` puis création d'une session de sprint.
 
-## 5. Stratégie de Logging et Monitoring
+## 05. Stratégie de Logging et Monitoring
 
 ### 5.1. Logging
 Format : Tous les logs doivent être au format JSON pour une ingestion facile par des outils comme Fluentd ou Logstash.

@@ -1,17 +1,33 @@
+## Table des Matières
+
+- [01. Vision du Produit](#01-vision-du-produit)
+- [02. Persona Utilisateur Principal](#02-persona-utilisateur-principal)
+- [03. Exigences Fonctionnelles (User Stories)](#03-exigences-fonctionnelles-user-stories)
+  - [Epic 1 : Gestion du Sprint](#epic-1--gestion-du-sprint)
+  - [Epic 2 : Capture et Synthèse des Données](#epic-2--capture-et-synthse-des-donnes)
+  - [Epic 3 : Augmentation Cognitive](#epic-3--augmentation-cognitive)
+  - [Epic 4 : Finalisation](#epic-4--finalisation)
+- [04. Glossaire des Nœuds du Système](#04-glossaire-des-nuds-du-systme)
+
+---
+source_file: 00_SPECIFICATIONS_FONCTIONNELLES.md
+---
+
+
 # 01. Spécifications Fonctionnelles Détaillées
 
-| ID du Document | CSF-FS-v1.0 |
-| :--- | :--- |
-| **Titre** | Spécifications Fonctionnelles - Cognitive Sprint Facilitator |
-| **Version** | 1.0 |
-| **Date** | 2025-07-08 |
-| **Auteur** | PromptArchitectPrime |
+| ID du Document | CSF-FS-v1.0                                                  |
+| :---           | :---                                                         |
+| **Titre**      | Spécifications Fonctionnelles - Cognitive Sprint Facilitator |
+| **Version**    | 1.0                                                          |
+| **Date**       | 2025-07-08                                                   |
+| **Auteur**     | PromptArchitectPrime                                         |
 
-## 1. Vision du Produit
+## 01. Vision du Produit
 
 Cognitive Sprint Facilitator est une solution logicielle d'assistance par IA conçue pour augmenter la capacité cognitive des équipes lors d'ateliers d'innovation structurés. Via une interface conversationnelle, l'outil assiste le facilitateur humain en automatisant la capture d'idées, en enrichissant les discussions avec des données et des analyses pertinentes, et en consolidant les décisions dans un rapport final structuré.
 
-## 2. Persona Utilisateur Principal
+## 02. Persona Utilisateur Principal
 
 L'utilisateur principal du système est le **"Facilitateur Humain"**.
 
@@ -22,7 +38,7 @@ L'utilisateur principal du système est le **"Facilitateur Humain"**.
     * Le risque de passer à côté d'angles morts (concurrents oubliés, biais cognitifs).
     * Le temps passé à synthétiser et à formater les livrables après l'atelier.
 
-## 3. Exigences Fonctionnelles (User Stories)
+## 03. Exigences Fonctionnelles (User Stories)
 
 ### Epic 1 : Gestion du Sprint
 
@@ -86,12 +102,12 @@ L'utilisateur principal du système est le **"Facilitateur Humain"**.
     2.  L'agent `ChroniclerNode` récupère toutes les décisions finales archivées dans l'état de la session.
     3.  Le document final est produit au format Markdown, complété avec les bonnes informations aux bons endroits.
 
-## 4. Glossaire des Nœuds du Système
+## 04. Glossaire des Nœuds du Système
 
-| Nœud | Rôle Principal |
-|------|----------------|
-| `ScribeNode` | Capture fidèlement les idées dictées ou les votes et les stocke de manière structurée dans l'état de la session. |
-| `AnalystNode` | Regroupe les idées similaires en thèmes et met en évidence les outliers pour faciliter la discussion. |
-| `MarketIntelNode` | Réalise des recherches externes ciblées (web) et renvoie des résumés factuels avec sources citées. |
+| Nœud                  | Rôle Principal                                                                                                                                                                              |
+| ------                | ----------------                                                                                                                                                                            |
+| `ScribeNode`          | Capture fidèlement les idées dictées ou les votes et les stocke de manière structurée dans l'état de la session.                                                                            |
+| `AnalystNode`         | Regroupe les idées similaires en thèmes et met en évidence les outliers pour faciliter la discussion.                                                                                       |
+| `MarketIntelNode`     | Réalise des recherches externes ciblées (web) et renvoie des résumés factuels avec sources citées.                                                                                          |
 | `CriticCommitteeNode` | Orchestration parallèle d'une série d'"Agents Critics" (Faisabilité, Désirabilité, Stratégie, Finances, Opérations, etc.) ; agrège leurs évaluations individuelles en un rapport consolidé. |
-| `ChroniclerNode` | Compile les décisions et artefacts de la session pour générer le rapport final formaté. |
+| `ChroniclerNode`      | Compile les décisions et artefacts de la session pour générer le rapport final formaté.                                                                                                     |

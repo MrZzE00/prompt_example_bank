@@ -1,13 +1,32 @@
+## Table des Matières
+
+- [01. Objectifs et Périmètre](#01-objectifs-et-primtre)
+  - [1.1. Objectifs](#11-objectifs)
+  - [1.2. Périmètre](#12-primtre)
+- [02. Niveaux de Test](#02-niveaux-de-test)
+  - [2.1. Tests Unitaires](#21-tests-unitaires)
+  - [2.2. Tests d'Intégration](#22-tests-dintgration)
+  - [2.3. Tests End-to-End (E2E)](#23-tests-end-to-end-e2e)
+- [03. Tests Non-Fonctionnels](#03-tests-non-fonctionnels)
+  - [3.1. Tests de Performance](#31-tests-de-performance)
+  - [3.2. Tests de Sécurité](#32-tests-de-scurit)
+- [04. Outils et Observabilité](#04-outils-et-observabilit)
+
+---
+source_file: 04_PLAN_DE_TESTS_QA.md
+---
+
+
 # 05. Plan de Tests et Stratégie de QA
 
-| ID du Document | CSF-QA-v1.0 |
-| :--- | :--- |
-| **Titre** | Plan de Tests & Stratégie QA - Cognitive Sprint Facilitator |
-| **Version** | 1.0 |
-| **Date** | 2025-07-08 |
-| **Auteur** | PromptArchitectPrime |
+| ID du Document | CSF-QA-v1.0                                                 |
+| :---           | :---                                                        |
+| **Titre**      | Plan de Tests & Stratégie QA - Cognitive Sprint Facilitator |
+| **Version**    | 1.0                                                         |
+| **Date**       | 2025-07-08                                                  |
+| **Auteur**     | PromptArchitectPrime                                        |
 
-## 1. Objectifs et Périmètre
+## 01. Objectifs et Périmètre
 
 ### 1.1. Objectifs
 
@@ -22,7 +41,7 @@ Ce document a pour but de définir la stratégie de test pour le système "Cogni
 * **Dans le périmètre :** L'intégralité de l'application, incluant le frontend (UI), l'API Gateway, le moteur LangGraph (nœuds et routeur), et l'intégration avec la base de données de persistance.
 * **Hors du périmètre :** Les tests de performance des services externes eux-mêmes (API de recherche, API LLM). Nous ne testerons que la capacité de notre système à gérer leurs réponses et leurs éventuelles défaillances.
 
-## 2. Niveaux de Test
+## 02. Niveaux de Test
 
 La stratégie s'articule autour de trois niveaux de tests principaux.
 
@@ -67,7 +86,7 @@ La stratégie s'articule autour de trois niveaux de tests principaux.
     5.  Exécuter un cycle "Actor-Critic" sur une approche. Valider le rapport consolidé.
     6.  Générer le rapport final. Valider que son contenu est conforme aux décisions prises.
 
-## 3. Tests Non-Fonctionnels
+## 03. Tests Non-Fonctionnels
 
 ### 3.1. Tests de Performance
 
@@ -88,7 +107,7 @@ La stratégie s'articule autour de trois niveaux de tests principaux.
     * **Abuse Mode / Flood Test :** Simuler un utilisateur malveillant envoyant 200 requêtes/minute contenant des prompts volumineux et répétitifs. **Résultat attendu :** Le système détecte l'abus, applique un mécanisme de throttling ou de blocage, et maintient la stabilité des autres sessions.
     * **Dépassement de Limite de Requêtes (Rate-Limit) :** Dépasser la limite d'API (ex: 121 requêtes dans une fenêtre de 60 s où la limite est 120) et vérifier que le système retourne un code 429 ou un message "Rate limit exceeded" sans fuite d'information sensible.
 
-## 4. Outils et Observabilité
+## 04. Outils et Observabilité
 
 * **Frameworks de Test :** `pytest` (unitaire/intégration), `Playwright` (E2E).
 * **Traçabilité et Débogage :** L'utilisation de **LangSmith** est **obligatoire**. Chaque exécution de test E2E doit être associée à une trace LangSmith pour permettre une analyse fine des échecs, des latences et du comportement de chaque LLM call.

@@ -1,19 +1,31 @@
+## Table des Matières
+
+- [01. Vue d'Ensemble & Paradigme Architectural](#01-vue-densemble--paradigme-architectural)
+- [02. Composants Clés](#02-composants-cls)
+- [03. Schéma du Flux de Données Principal](#03-schma-du-flux-de-donnes-principal)
+- [04. Description d'un Cycle "Actor-Critic"](#04-description-dun-cycle-actor-critic)
+
+---
+source_file: 01_ARCHITECTURE_TECHNIQUE.md
+---
+
+
 # 02. Schéma d'Architecture Technique
 
-| ID du Document | CSF-TA-v1.0 |
-| :--- | :--- |
-| **Titre** | Architecture Technique - Cognitive Sprint Facilitator |
-| **Version** | 1.0 |
-| **Date** | 2025-07-08 |
-| **Auteur** | PromptArchitectPrime |
+| ID du Document | CSF-TA-v1.0                                           |
+| :---           | :---                                                  |
+| **Titre**      | Architecture Technique - Cognitive Sprint Facilitator |
+| **Version**    | 1.0                                                   |
+| **Date**       | 2025-07-08                                            |
+| **Auteur**     | PromptArchitectPrime                                  |
 
-## 1. Vue d'Ensemble & Paradigme Architectural
+## 01. Vue d'Ensemble & Paradigme Architectural
 
 Le système "Cognitive Sprint Facilitator" est implémenté comme une **application multi-agents stateful**. L'orchestration est gérée par un graphe d'états dirigé, construit avec la librairie **LangGraph**.
 
 Ce paradigme est choisi pour sa capacité à gérer nativement des workflows **cycliques** (ex: évaluation -> révision -> réévaluation) et **collaboratifs** (plusieurs agents agissant sur un état partagé), ce qui est essentiel pour la nature interactive d'un atelier.
 
-## 2. Composants Clés
+## 02. Composants Clés
 
 L'architecture est décomposée en plusieurs services et composants logiques distincts :
 
@@ -36,7 +48,7 @@ L'architecture est décomposée en plusieurs services et composants logiques dis
 
 6.  **Observabilité (LangSmith) :** L'intégration avec LangSmith est une exigence non-fonctionnelle critique pour tracer, déboguer et monitorer chaque exécution du graphe, offrant une visibilité complète sur le comportement des agents.
 
-## 3. Schéma du Flux de Données Principal
+## 03. Schéma du Flux de Données Principal
 
 Le diagramme suivant illustre comment une requête de l'utilisateur traverse le système LangGraph.
 
@@ -63,7 +75,7 @@ graph TD
     style D fill:#dbf,stroke:#333,stroke-width:2px
     style B fill:#ffe4c4,stroke:#333,stroke-width:2px
 
-## 4. Description d'un Cycle "Actor-Critic"
+## 04. Description d'un Cycle "Actor-Critic"
 Un flux de travail complexe comme l'évaluation d'une proposition se déroule comme suit :
 
 Requête : L'utilisateur soumet une proposition à évaluer.

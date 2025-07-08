@@ -1,17 +1,40 @@
+## Table des Matières
+
+- [01. Introduction](#01-introduction)
+- [02. Agents de Production (Actors)](#02-agents-de-production-actors)
+  - [2.1. ScribeNode](#21-scribenode)
+  - [2.2. AnalystNode](#22-analystnode)
+  - [2.3. MarketIntelNode](#23-marketintelnode)
+  - [2.4. ChroniclerNode](#24-chroniclernode)
+- [03. Comité d'Évaluation (Critics)](#03-comit-dvaluation-critics)
+  - [3.1. FeasibilityCriticNode](#31-feasibilitycriticnode)
+  - [3.2. DesirabilityCriticNode](#32-desirabilitycriticnode)
+  - [3.3. StrategyCriticNode](#33-strategycriticnode)
+  - [3.4. FinancialCriticNode](#34-financialcriticnode)
+  - [3.5. MarketingCriticNode](#35-marketingcriticnode)
+  - [3.6. LegalCriticNode](#36-legalcriticnode)
+  - [3.7. OperationsCriticNode](#37-operationscriticnode)
+  - [3.8. EthicsCriticNode](#38-ethicscriticnode)
+
+---
+source_file: 02_SPECIFICATIONS_NOEUDS_AGENTS.md
+---
+
+
 # 03. Spécifications Détaillées des Nœuds (Agents)
 
-| ID du Document | CSF-NA-v1.0 |
-| :--- | :--- |
-| **Titre** | Spécifications des Nœuds Agents |
-| **Version** | 1.0 |
-| **Date** | 2025-07-08 |
-| **Auteur** | PromptArchitectPrime |
+| ID du Document | CSF-NA-v1.0                     |
+| :---           | :---                            |
+| **Titre**      | Spécifications des Nœuds Agents |
+| **Version**    | 1.0                             |
+| **Date**       | 2025-07-08                      |
+| **Auteur**     | PromptArchitectPrime            |
 
-## 1. Introduction
+## 01. Introduction
 
 Ce document fournit les spécifications techniques pour l'implémentation de chaque **Nœud** (Agent) au sein du graphe LangGraph. Chaque nœud est une fonction Python qui prend l'objet `SprintState` en entrée et retourne le `SprintState` mis à jour.
 
-## 2. Agents de Production (Actors)
+## 02. Agents de Production (Actors)
 
 Ces nœuds sont responsables de la création et de la structuration de l'information.
 
@@ -68,7 +91,7 @@ Ces nœuds sont responsables de la création et de la structuration de l'informa
 * **Output (Mise à jour du `State`) :** Ajoute le rapport final au `State`.
     * Exemple : `state['final_report'] = "## Founding Hypothesis\n**Customer:** Enfants 8-12\n..."`
 
-## 3. Comité d'Évaluation (Critics)
+## 03. Comité d'Évaluation (Critics)
 
 Chaque "Critic" est un nœud qui reçoit une proposition à évaluer et retourne une évaluation JSON structurée.
 

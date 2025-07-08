@@ -1,3 +1,37 @@
+<!-- TOC START -->
+## Table des Matières
+
+- [Table des Matières](#table-des-matires)
+- [01. Spécifications Fonctionnelles Détaillées](#01-spcifications-fonctionnelles-dtailles)
+  - [1.1. Vision du Produit](#11-vision-du-produit)
+  - [1.2. Persona Utilisateur Principal](#12-persona-utilisateur-principal)
+  - [1.3. Exigences Fonctionnelles (User Stories)](#13-exigences-fonctionnelles-user-stories)
+- [02. Schéma d'Architecture Technique](#02-schma-darchitecture-technique)
+  - [2.1. Vue d'Ensemble & Paradigme Architectural](#21-vue-densemble--paradigme-architectural)
+  - [2.2. Composants Clés](#22-composants-cls)
+  - [2.3. Schéma du Flux de Données Principal](#23-schma-du-flux-de-donnes-principal)
+- [03. Spécifications Détaillées des Nœuds (Agents)](#03-spcifications-dtailles-des-nuds-agents)
+  - [3.1. Agents de Production (Actors)](#31-agents-de-production-actors)
+  - [3.2. Comité d'Évaluation (Critics)](#32-comit-dvaluation-critics)
+- [04. Modèle de Données (State & Persistance)](#04-modle-de-donnes-state--persistance)
+  - [4.1. L'Objet d'État (SprintState)](#41-lobjet-dtat-sprintstate)
+  - [4.2. Schéma de la Base de Données (Persistance)](#42-schma-de-la-base-de-donnes-persistance)
+- [05. Plan de Tests et Stratégie de QA](#05-plan-de-tests-et-stratgie-de-qa)
+  - [5.1. Niveaux de Test](#51-niveaux-de-test)
+  - [5.2. Tests Non-Fonctionnels](#52-tests-non-fonctionnels)
+  - [5.3. Outils](#53-outils)
+- [06. Guide de Déploiement et Monitoring](#06-guide-de-dploiement-et-monitoring)
+  - [6.1. Prérequis](#61-prrequis)
+  - [6.2. Procédure de Déploiement](#62-procdure-de-dploiement)
+  - [6.3. Monitoring](#63-monitoring)
+
+<!-- TOC END -->
+
+---
+source_file: readme.md
+---
+
+
 # Dossier de Spécifications Techniques : Cognitive Sprint Facilitator
 
 | Statut   | Version | Date       | Auteur               |
@@ -13,7 +47,7 @@
 
 ---
 
-## 1. Spécifications Fonctionnelles Détaillées
+## 01. Spécifications Fonctionnelles Détaillées
 
 ### 1.1. Vision du Produit
 
@@ -96,7 +130,7 @@ L'utilisateur principal du système est le **"Facilitateur Humain"**.
 
 ---
 
-## 2. Schéma d'Architecture Technique
+## 02. Schéma d'Architecture Technique
 
 ### 2.1. Vue d'Ensemble & Paradigme Architectural
 
@@ -139,7 +173,7 @@ graph TD
     style D fill:#dbf,stroke:#333,stroke-width:2px
     style B fill:#ffe4c4,stroke:#333,stroke-width:2px
 
-## 3. Spécifications Détaillées des Nœuds (Agents)
+## 03. Spécifications Détaillées des Nœuds (Agents)
 Ce document fournit le contrat d'interface pour chaque nœud du graphe.
 
 ### 3.1. Agents de Production (Actors)
@@ -203,7 +237,7 @@ Output (JSON) : { "critic": "Strategy", "score": 1-10, "justification": "...", "
 
 (Les autres agents Critics - Financial, Marketing, Legal, Operations, Ethics - suivent une structure similaire avec leur propre mission et format de sortie JSON.)
 
-## 4. Modèle de Données (State & Persistance)
+## 04. Modèle de Données (State & Persistance)
 
 ### 4.1. L'Objet d'État (SprintState)
 Structure de données en mémoire passée entre les nœuds.
@@ -231,7 +265,7 @@ Table proposals : proposal_id (PK), request_id (FK), actor_node, content.
 
 Table critiques : critique_id (PK), proposal_id (FK), critic_node, evaluation (JSONB).
 
-## 5. Plan de Tests et Stratégie de QA
+## 05. Plan de Tests et Stratégie de QA
 
 ### 5.1. Niveaux de Test
 Tests Unitaires : Chaque nœud est testé de manière isolée en moquant les appels LLM et DB.
@@ -250,7 +284,7 @@ Frameworks : pytest (unitaire/intégration), Playwright (E2E).
 
 Observabilité : L'utilisation de LangSmith est obligatoire pour le traçage et le débogage.
 
-## 6. Guide de Déploiement et Monitoring
+## 06. Guide de Déploiement et Monitoring
 
 ### 6.1. Prérequis
 Stack : Python 3.11+, Docker, PostgreSQL 14+.

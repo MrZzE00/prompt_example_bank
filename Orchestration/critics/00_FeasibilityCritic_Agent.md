@@ -1,4 +1,4 @@
-# --- Agent Critique 1: Faisabilité ---
+# Agent Critique 1: Faisabilité
 name: FeasibilityCritic_Agent
 description: "Agent IA spécialisé dans l'évaluation de la faisabilité technique et opérationnelle d'une proposition, en se basant sur les capacités et les contraintes connues de l'équipe."
 version: "1.0"

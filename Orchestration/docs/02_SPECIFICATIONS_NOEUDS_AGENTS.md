@@ -48,7 +48,9 @@ Ces nœuds sont responsables de la création et de la structuration de l'informa
 * **Logique d'Exécution :**
     1.  Appeler l'outil `web_search` avec la requête fournie.
     2.  Invoquer le LLM avec le prompt `prompts/marketintel_prompt.yaml` et les résultats de la recherche pour synthétiser et extraire les informations clés.
-    3.  Citer impérativement les sources (URL) pour chaque information.
+    3.  Citer impérativement les sources (URL) pour chaque information **selon le format** :
+       - Dans la synthèse : chaque fait est suivi d'un lien Markdown `[Source](https://...)`.
+       - Dans l'objet ajouté au `State` : chaque entrée contient une clé `source` avec l'URL d'origine.
 * **Prompt Associé :** `prompts/marketintel_prompt.yaml`
 * **Outils Externes :** `tools.web_search`
 * **Output (Mise à jour du `State`) :** Ajoute les résultats de la recherche.

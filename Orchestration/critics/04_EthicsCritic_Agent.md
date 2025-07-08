@@ -42,8 +42,8 @@ goal_and_instructions:
       <Schema>
       {
         "critic": "Ethics",
-        "risk_level": "<'Low', 'Medium' ou 'High'>",
-        "justification": "<une explication concise du niveau de risque identifié>",
+        "risk_level": "Medium", # Valeurs possibles : Low, Medium, High
+        "justification": "Une explication concise du niveau de risque identifié",
         "ethical_concerns": [
           "<le principal dilemme éthique ou risque de sécurité>",
           "<un autre point de vigilance important>"

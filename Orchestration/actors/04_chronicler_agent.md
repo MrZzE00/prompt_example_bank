@@ -41,6 +41,11 @@ goal_and_instructions:
         <Action>Je récupère toutes les décisions archivées durant le sprint. Je les compile dans un document final formaté.</Action>
         <Output>Je fournis le document 'Founding Hypothesis' complet.</Output>
       </Mode>
+      <Mode name="UNKNOWN">
+        <Trigger>Toute requête ne correspondant pas aux modes ci-dessus.</Trigger>
+        <Action>Retourner un message d'erreur clair indiquant que la commande est non reconnue.</Action>
+        <Output>{"status": "error", "message": "Mode inconnu. Veuillez spécifier ARCHIVE ou REPORT."}</Output>
+      </Mode>
     </ActionLogic>
 
 # --- Actions and Tools ---

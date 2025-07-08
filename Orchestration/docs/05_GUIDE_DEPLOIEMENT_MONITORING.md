@@ -81,7 +81,15 @@ Dans Kubernetes, vous pouvez créer un **Job init-migration** (voir manifest `jo
        failureThreshold: 3
      ```
    * **livenessProbe** identique ou sur `/live` pour redémarrer le pod en cas de blocage.
-3. Assurez-vous que le champ `envFrom: .env` ou `env` contient `DATABASE_URL` et autres variables.
+3. Injectez les variables via **ConfigMap** (non sensible) ou **Secret** (sensible) :
+   ```yaml
+   envFrom:
+     - secretRef:
+         name: csf-secrets # Contient OPENAI_API_KEY, DATABASE_URL, etc.
+     - configMapRef:
+         name: csf-config # Contient LOG_LEVEL, APP_PORT, etc.
+   ```
+   Évitez de monter directement un fichier `.env` ; la gestion via ConfigMap/Secret est plus robuste et suit les bonnes pratiques Kubernetes.
 
 ### 4.4. Vérification Post-Déploiement
 1. Vérifiez que le Job de migration est **Succeeded**.
